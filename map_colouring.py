@@ -1,16 +1,16 @@
 # Python program for solution of M Coloring
 # problem using backtracking
 
-class Graph():
+class Graph():                      #we are intiliazing a graph 
 
     def __init__(self, vertices):
         self.V = vertices
-        self.graph = [[0 for column in range(vertices)]\
+        self.graph = [[0 for column in range(vertices)]
                               for row in range(vertices)]
 
     # A utility function to check if the current color assignment
     # is safe for vertex v
-    def isSafe(self, v, colour, c):
+    def isSafe(self, v, colour, c):             #checking if there it is safe for coluring i.e. adjacent colurs should not be same
         for i in range(self.V):
             if self.graph[v][i] == 1 and colour[i] == c:
                 return False
@@ -35,9 +35,9 @@ class Graph():
             return False
 
         # Print the solution
-        print "Solution exist and Following are the assigned colours:"
+        print ("Solution exist and Following are the assigned colours:")
         for c in colour:
-            print c,
+            print (c)
         return True
 
 # Driver Code
